@@ -1,0 +1,27 @@
+name: Docker Image CI
+
+on:
+  release:
+    types: [published]
+    
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Build docker Nuxt
+        uses: Libertech-FR/lt-actions/docker-image@main
+        with:
+          repository: ${{ github.repository }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
