@@ -4,18 +4,19 @@
 
 ## Installation
 
+Dupliquer le .env.exemple puis supprimer la partie .exemple
+Remplir ensuite les variables
+
+Après avoir cloné le depot, lancer une release sur le depot git pour construire l'image si elle n'existe pas
+Remplir les variables dans le Makefile, pour l'image, prendre celle du package du depot git commenceant par ghcr.io
+Puis lancer la commande 
+
 ```bash
-$ make build
-$ make exec
+make exec
 yarn install
 ```
 
 ## Running the app
-
-Dupliquer le .env.exemple puis supprimer la partie .exemple
-Remplir ensuite les variables
-
-Remplir les variables dans le Makefile
 
 ```bash
 #Pour lancer l'application :
