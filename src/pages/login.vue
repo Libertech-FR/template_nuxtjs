@@ -13,42 +13,41 @@ v-card.elevation-12.mx-auto(min-width="400" max-width="1200" :style="{ opacity: 
 </template>
 
 <script>
-// noinspection JSUnusedGlobalSymbols
-import { Component } from 'nuxt-property-decorator'
-import Vue from 'vue'
+import { defineComponent, useMeta } from '@nuxtjs/composition-api'
 
-@Component({
-  head() {
+export default defineComponent({
+  head: {},
+  setup() {
+    useMeta({
+      title: 'Connexion',
+      layout: 'default',
+      auth: false,
+    })
     return {
-      title: 'Connexion'
+      name: 'LoginPage',
+      payload: {
+        username: '',
+        password: '',
+      },
+      showPassword: false,
     }
   },
-  layout: 'default',
-  auth: false
+  methods: {
+    async login() {
+      try {
+        await this.$auth.loginWith('local', { data: this.payload })
+        await this.$router.push('/')
+      } catch (e) {
+        await this.$dialog.message.error('Une erreur est survenue lors de la connexion, veuillez réessayer')
+        console.error(e.message)
+      }
+    },
+
+    async mounted() {
+      if (this.$auth.loggedIn) {
+        await this.$router.push('/')
+      }
+    },
+  },
 })
-export default class login extends Vue {
-  name = 'LoginPage'
-  payload = {
-    username: '',
-    password: ''
-  }
-
-  showPassword = false
-
-  async login() {
-    try {
-      await this.$auth.loginWith('local', { data: this.payload })
-      await this.$router.push('/')
-    } catch (e) {
-      await this.$dialog.message.error("Une erreur est survenue lors de la connexion, veuillez réessayer")
-      console.error(e.message)
-    }
-  }
-
-  async mounted() {
-    if (this.$auth.loggedIn) {
-      await this.$router.push('/')
-    }
-  }
-}
 </script>

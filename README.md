@@ -9,7 +9,7 @@ Remplir ensuite les variables
 
 Après avoir cloné le depot, lancer une release sur le depot git pour construire l'image si elle n'existe pas
 Remplir les variables dans le Makefile, pour l'image, prendre celle du package du depot git commenceant par ghcr.io
-Puis lancer la commande 
+Puis lancer la commande
 
 ```bash
 make exec
@@ -30,6 +30,7 @@ yarn 'nom de la dependance'
 Le compte ldap par default est dc@ab.com/test
 
 ## Documentations
+
 [Nuxt](https://nuxtjs.org/docs/get-started/directory-structure#the-nuxtconfigjs-file)
 
 [VueJS](https://vuejs.org/guide/introduction.html)
@@ -42,7 +43,7 @@ Le compte ldap par default est dc@ab.com/test
 - Créer un dossier api dans le quel il y a le .env du back
 - Dans le .env du back, remplir les données relatives au ldap
 - Dans /ui/.env, changer la variable APP_BASE_URL en mettant le nom du conteneur exemple.api et son port
-- Modifier ce docker-compose pour que les noms de services/images soient cohérents 
+- Modifier ce docker-compose pour que les noms de services/images soient cohérents
 
 ```yml
 version: '3'
@@ -80,7 +81,7 @@ services:
     command: --wiredTigerCacheSizeGB 1.5
     restart: always
     ports:
-      - "27017:27017"
+      - '27017:27017'
     volumes:
       - ./mongo:/data/db
     networks:
@@ -98,5 +99,3 @@ networks:
   reverse:
     external: true
 ```
-
-

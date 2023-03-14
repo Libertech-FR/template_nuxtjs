@@ -1,10 +1,9 @@
 import { Middleware } from '@nuxt/types'
 
-const auth: Middleware = ({$auth, redirect}) => {
+const auth: Middleware = ({ $auth, redirect }) => {
   if (!$auth.loggedIn) {
     return redirect('/login')
-  }
-  else {
+  } else {
     return redirect('/index')
   }
 }

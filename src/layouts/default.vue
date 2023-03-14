@@ -1,4 +1,4 @@
-<template lang='pug'>
+<template lang="pug">
 v-app
   v-app-bar( :clipped-left="clipped" fixed app)
     span Titre
@@ -48,6 +48,4 @@ export default {
 }
 </script>
 
-<style>
-
-</style>
+<style></style>

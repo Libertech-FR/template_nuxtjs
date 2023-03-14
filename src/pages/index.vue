@@ -3,27 +3,14 @@ div
 </template>
 
 <script>
-import { Component } from 'nuxt-property-decorator'
-import Vue from 'vue'
+import { defineComponent, useMeta } from '@nuxtjs/composition-api'
 
-@Component({})
-export default class index extends Vue {
-  head() {
-    return {
-      title: 'Accueil',
-    }
-  }
-
-  // async mounted() {
-  //   if(this.$auth.loggedIn){
-  //     await this.$router.push('/list')
-  //   } else {
-  //     await this.$router.push('/login')
-  //   }
-  // }
-}
+export default defineComponent({
+  head: {},
+  setup() {
+    useMeta({
+      title: 'Home',
+    })
+  },
+})
 </script>
-
-<style scoped>
-
-</style>
