@@ -1,51 +1,25 @@
 <template lang="pug">
-v-app
-  v-app-bar( :clipped-left="clipped" fixed app)
-    span Titre
-    v-spacer
-    span(
-      v-if='$auth.loggedIn'
-      v-html='$auth.user.cn'
-      )
-    v-btn.ml-2(
-      text
-      v-if='$auth.loggedIn'
-      @click='$auth.logout()'
-    ) Deconnexion
-  v-main.background
-    v-container(fluid)
-      Nuxt
-  v-footer(:absolute="!fixed" app)
-    span &copy; {{new Date().getFullYear()}}
+q-layout(view="lHh Lpr lFf")
+    lazy-nuxt-page
+    q-footer
+      q-bar.q-pl-none.bg-primary(dense)
+        q-space
+        div.q-ml-xs
+          span app
+          span(v-text="config.packageVersion")
 </template>
 
-<script>
-export default {
-  name: 'DefaultLayout',
-  data() {
+<script lang="ts">
+import { useRuntimeConfig } from '#app'
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+  setup() {
+    const runtimeConfig = useRuntimeConfig()
+
     return {
-      clipped: false,
-      drawer: false,
-      fixed: false,
-      items: [
-        {
-          icon: 'mdi-apps',
-          title: 'Welcome',
-          to: '/',
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire',
-        },
-      ],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: 'Vuetify.js',
+      config: <any>runtimeConfig.public,
     }
   },
-}
+})
 </script>
-
-<style></style>

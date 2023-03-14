@@ -1,0 +1,8 @@
+{
+  "prettier.enable": false,
+  "eslint.packageManager": "yarn",
+  "eslint.trace.server": "off",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}
