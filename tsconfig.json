@@ -1,21 +1,8 @@
 {
+  "extends": "./.nuxt/tsconfig.json",
   "compilerOptions": {
-    "target": "ES2018",
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "lib": ["ESNext", "ESNext.AsyncIterable", "DOM"],
-    "esModuleInterop": true,
-    "allowJs": true,
-    "sourceMap": true,
-    "strict": true,
-    "noEmit": true,
     "experimentalDecorators": true,
-    "baseUrl": "./src",
-    "paths": {
-      "~/*": ["./src/*"],
-      "@/*": ["./*"]
-    },
-    "types": ["@nuxt/types", "@nuxtjs/axios", "@types/node", "@nuxtjs/dayjs", "@nuxtjs/auth-next"]
-  },
-  "exclude": ["src/node_modules", ".nuxt", "dist"]
+    "types": ["@nuxt/types", "@nuxtjs/i18n"],
+    "sourceMap": false
+  }
 }
