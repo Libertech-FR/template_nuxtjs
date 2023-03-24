@@ -62,7 +62,7 @@ startprod: ## Démarre une image de développement
 exec: ## Démarre une image de développement
 	docker run -it --rm \
 		-v $(CURDIR):/usr/src/app \
-		$(DOCKERIMAGE) sh
+		$(DOCKERIMAGE) bash
 
 build: ## Fabrique le conteneur de pré-production
 	docker build -t $(DOCKERIMAGE):latest .

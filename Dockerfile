@@ -13,10 +13,14 @@ RUN apk update && apk --no-cache upgrade && apk add --no-cache \
   jq \
   nano \
   vim \
+  curl \
   bash \
   bash-completion \
   iputils \
-  inetutils-telnet
+  inetutils-telnet \
+  bind-tools \
+  net-tools \
+  tcpdump
 
 COPY . .
 
