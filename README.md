@@ -1,3 +1,6 @@
+# NuxtJS !! V3 !!
+Pour accéder à la V2, changez de branche !
+
 ## Description
 
 [Nuxt](https://github.com/nestjs/nest) framework starter repository.

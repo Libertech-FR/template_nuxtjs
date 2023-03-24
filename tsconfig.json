@@ -7,7 +7,8 @@
       "~/*": ["./src/*"],
       "@/*": ["./*"]
     },
-    "types": ["@nuxt/types", "@nuxtjs/axios", "@types/node", "@nuxtjs/dayjs", "@nuxtjs/auth-next"]
+    "types": ["@nuxt/types", "@nuxtjs/axios", "@types/node", "@nuxtjs/dayjs", "@nuxtjs/auth-next"],
+    "sourceMap": false
   },
   "exclude": ["src/node_modules", ".nuxt", "dist"]
 }

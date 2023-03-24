@@ -3,7 +3,9 @@ dist/
 .DS_Store/
 .idea/
 .nuxt/
+.output/
 .env
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.env.hash

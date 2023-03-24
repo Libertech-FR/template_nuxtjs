@@ -18,6 +18,16 @@ dev: ## Démarre une image de développement
 		--add-host host.docker.internal:host-gateway \
 		$(DOCKERIMAGE) yarn dev
 
+start-prod: ## Démarre une image de production
+	docker run -it --rm \
+		-v $(CURDIR):/usr/src/app \
+		-e CHOKIDAR_USEPOLLING=true \
+		--name $(APPNAME) \
+		-p $(PORT):3000 \
+		--network dev \
+		--add-host host.docker.internal:host-gateway \
+		$(DOCKERIMAGE) yarn start:prod
+
 generate: ## Génère une image de développement
 	docker run -it --rm \
 		-v $(CURDIR):/usr/src/app \
