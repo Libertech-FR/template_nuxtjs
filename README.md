@@ -31,11 +31,11 @@ Le compte ldap par default est dc@ab.com/test
 
 ## Documentations
 
-[Nuxt](https://nuxtjs.org/docs/get-started/directory-structure#the-nuxtconfigjs-file)
+[Nuxt](https://nuxt.com/docs)
 
 [VueJS](https://vuejs.org/guide/introduction.html)
 
-[Vuetify](https://vuetifyjs.com/en/labs/introduction/#header/)
+[Quasar](https://quasar.dev/)
 
 ## Mise en production
 

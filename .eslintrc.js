@@ -9,15 +9,9 @@ module.exports = {
     project: 'tsconfig.json',
     sourceType: 'module',
   },
-  extends: [
-    '@nuxtjs/eslint-config-typescript',
-    'plugin:nuxt/recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:prettier/recommended',
-    'prettier',
-  ],
-  ignorePatterns: ['.eslintrc.js'],
   plugins: ['@typescript-eslint/eslint-plugin'],
+  extends: ['plugin:@typescript-eslint/recommended', 'plugin:prettier/recommended'],
+  ignorePatterns: ['.eslintrc.js'],
   rules: {
     'no-console': 0,
     'comma-dangle': [2, 'always-multiline'],
